@@ -1,0 +1,10 @@
+#content {
+	margin-top: 2.5%;
+	
+}
+.test {
+	background: rgba(250, 50, 50, 0.2);
+	width : 25%;
+	height : 150px;
+	text-align: center;
+}
