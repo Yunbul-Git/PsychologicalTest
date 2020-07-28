@@ -16,11 +16,6 @@ public class HomeController {
 		return "/test/testPage";
 	}
 	
-	@RequestMapping("/review")
-	public String review() {
-		return "/board/list";
-	}
-	
 	@RequestMapping("/admin")
 	public String admin() {
 		return "/admin/admin";
@@ -28,6 +23,8 @@ public class HomeController {
 	
 	@RequestMapping("/signup")
 	public String signUp() {
+		//client id , redirect uri 
+		
 		return "signUp";
 	}
 	
@@ -36,8 +33,5 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping("/write")
-	public String write() {
-		return "/board/write";
-	}
+
 }

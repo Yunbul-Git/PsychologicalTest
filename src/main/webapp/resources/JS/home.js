@@ -12,32 +12,51 @@ window.onload = function () {
     js_signUp.addEventListener('click', load_signUp);
     js_login.addEventListener('click', load_login);
     js_home.addEventListener('click', load_home);
-    
-    alert('load complete');
 }
 
-function load_page(url) {
+function ajax(method, url, workDone) {
     var httpRequest = new XMLHttpRequest();
-    httpRequest.open("get", url, true);
+    httpRequest.open(method, url, true);
+    /*
+        if(workDone === 5) {
+            httpRequest.setRequestHeader("Access-Control-Allow-Origin", );
+            httpRequest.setRequestHeader("Access-Control-Allow-Method", "GET");
+        }
+        */
     httpRequest.onreadystatechange = function() {
         if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200) {
             document.getElementById("content").innerHTML = httpRequest.responseText;
+            switch(workDone) {
+                case 1:
+
+                case 2:
+
+                case 3:
+
+                case 4:
+
+                case 5:
+
+                case 6:
+
+            }
+
         }
     }
     httpRequest.send();
 }
 
+function popup(url) {
+
+}
 // 네비게이션
-function load_test1() { var url = "/test"; load_page(url); }
+function load_test1() { var url = "/test"; var method = "get"; ajax(method, url, 1); }
+function load_review() { var url = "/review"; var method = "get"; console.log("before ajax"); ajax(method, url, 2);
+/* var js_write = document.querySelector(".write"); js_write.addEventListener('click', load_write)*/
 
-function load_review() { var url = "/review"; load_page(url); }
-
-function load_admin() { var url = "/admin"; load_page(url); }
-
-function load_signUp() { var url = "/signup"; load_page(url); }
-
-function load_login() { var url = "/login"; load_page(url); }
-
+}
+function load_admin() { var url = "/admin"; var method = "get"; ajax(method, url, 3); }
+function load_signUp() { var url = "/signup"; var method = "get"; ajax(method, url, 4); }
+function load_login() { var url = "https://kauth.kakao.com/oauth/authorize?client_id=d4e7ff7ff658d4555ca8426a0a7f4703&redirect_uri=http://localhost:8090/kakaologin&response_type=code HTTP/1.1"; var method = "get"; ajax(method, url, 5); }
+function load_write() { var url = "/write"; var method = "get"; ajax(method, url, 6); }
 function load_home() { location.href = "/"; }
-
-function load_write() { var url = "/write"; load_page(url); }

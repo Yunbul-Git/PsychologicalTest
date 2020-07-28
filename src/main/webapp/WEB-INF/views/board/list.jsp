@@ -10,9 +10,7 @@
 	<table>
 		<tr>
 			<td colspan="4"></td>
-			<td>
-				<button class="write">이용후기 작성</button>
-			</td>
+			<td class="write">이용후기 작성</td>
 		</tr>
 		<tr class="topcol">
 			<th>번호</th>

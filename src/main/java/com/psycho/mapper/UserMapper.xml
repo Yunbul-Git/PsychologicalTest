@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psycho.mapper.UserMapper">
+
+	<!-- 회원가입 -->
+	<insert id="signup">
+		INSERT INTO pt_user (pt_num, pt_id, pt_pass, pt_gender, pt_year, pt_mon, pt_auth) VALUE (#{pt_num}, #{pt_id}, #{pt_pass}, #{pt_gender}, #{pt_year}, #{pt_mon}, 0);
+	</insert>
+
+	<!-- 로그인 -->
+	<select id="login" resultType="com.psycho.dto.UserVO">
+		SELECT * FROM pt_user WHERE pt_id = #{pt_id} AND pt_pass = #{pt_pass};
+	</select>
+	
+	<!-- 회원탈퇴 -->
+	<delete id="withdraw">
+		DELETE FROM pt_user WHERE pt_num = #{pt_num};
+	</delete>
+</mapper>
