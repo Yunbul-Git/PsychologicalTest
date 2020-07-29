@@ -21,17 +21,13 @@ public class HomeController {
 		return "/admin/admin";
 	}
 	
-	@RequestMapping("/signup")
-	public String signUp() {
+	@RequestMapping("/register")
+	public String register() {
 		//client id , redirect uri 
 		
-		return "signUp";
+		return "register";
 	}
 	
-	@RequestMapping("/login")
-	public String login() {
-		return "login";
-	}
-	
+
 
 }

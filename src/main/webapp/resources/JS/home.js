@@ -56,7 +56,7 @@ function load_review() { var url = "/review"; var method = "get"; console.log("b
 
 }
 function load_admin() { var url = "/admin"; var method = "get"; ajax(method, url, 3); }
-function load_signUp() { var url = "/signup"; var method = "get"; ajax(method, url, 4); }
-function load_login() { var url = "https://kauth.kakao.com/oauth/authorize?client_id=d4e7ff7ff658d4555ca8426a0a7f4703&redirect_uri=http://localhost:8090/kakaologin&response_type=code HTTP/1.1"; var method = "get"; ajax(method, url, 5); }
+function load_signUp() { var url = "/register"; var method = "get"; ajax(method, url, 4); }
+function load_login() { var url = "/login"; var method = "get"; ajax(method, url, 5); }
 function load_write() { var url = "/write"; var method = "get"; ajax(method, url, 6); }
 function load_home() { location.href = "/"; }

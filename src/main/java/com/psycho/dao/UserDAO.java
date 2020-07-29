@@ -1,27 +1,26 @@
 package com.psycho.dao;
 
-import java.util.HashMap;
-
 import org.apache.ibatis.session.SqlSession;
 
+import com.psycho.dto.UserDTO;
 import com.psycho.dto.UserVO;
 
 public class UserDAO {
 
 	private SqlSession sqlSession;
 	
-	public void login(String pt_id, String pt_pass) {
-		HashMap<String, String> map;
-		//map.put("pt_id", pt_id);
-		//map.put("pt_p", pt_pass);
-		//sqlSession.select("UserMapper.login", map);
+	// 회원가입
+	public void register(UserVO userVO) {
+		sqlSession.insert("UserMapper.register", userVO);
 	}
 	
-	public void signUp(UserVO userVO) {
-		sqlSession.insert("UserMapper.signup", userVO);
-	}
-	
+	// 회원탈퇴
 	public void withdraw(int pt_num) {
 		sqlSession.delete("UserMapper.withdraw", pt_num);
+	}
+	
+	// 로그인
+	public UserDTO login(UserDTO userDTO) {
+		return sqlSession.selectOne("UserMapper.login", userDTO);
 	}
 }
