@@ -1,11 +1,17 @@
 package com.psycho.service;
 
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
 import com.psycho.dao.UserDAO;
 import com.psycho.dto.UserDTO;
 import com.psycho.dto.UserVO;
 
+@Service
 public class UserService {
-
+	
+	@Inject
 	private UserDAO userDAO;
 	
 	// 회원가입

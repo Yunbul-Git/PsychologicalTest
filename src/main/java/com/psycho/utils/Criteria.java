@@ -1,4 +1,4 @@
-package com.psycho.dto;
+package com.psycho.utils;
 
 public class Criteria {
 	

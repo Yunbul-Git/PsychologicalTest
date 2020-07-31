@@ -8,13 +8,14 @@ public class UserVO {
 	private int pt_gender;
 	private int pt_year;
 	private int pt_mon;
+	private int pt_day;
 	private int pt_auth;
 	
 	public UserVO() {
 		super();
 	}
 	
-	public UserVO(int pt_num, String pt_id, String pt_pass, int pt_gender, int pt_year, int pt_mon, int pt_auth) {
+	public UserVO(int pt_num, String pt_id, String pt_pass, int pt_gender, int pt_year, int pt_mon, int pt_day, int pt_auth) {
 		super();
 		this.pt_num = pt_num;
 		this.pt_id = pt_id;
@@ -22,6 +23,7 @@ public class UserVO {
 		this.pt_gender = pt_gender;
 		this.pt_year = pt_year;
 		this.pt_mon = pt_mon;
+		this.pt_day = pt_day;
 		this.pt_auth = pt_auth;
 	}
 
@@ -72,7 +74,15 @@ public class UserVO {
 	public void setPt_mon(int pt_mon) {
 		this.pt_mon = pt_mon;
 	}
+	
+	public int getPt_day() {
+		return pt_day;
+	}
 
+	public void setPt_day(int pt_day) {
+		this.pt_day = pt_day;
+	}
+	
 	public int getPt_auth() {
 		return pt_auth;
 	}

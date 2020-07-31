@@ -2,13 +2,18 @@ package com.psycho.service;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
 
 import com.psycho.dao.ReviewDAO;
-import com.psycho.dto.Criteria;
 import com.psycho.dto.ReviewDTO;
+import com.psycho.utils.Criteria;
 
+@Service
 public class ReviewService {
 	
+	@Inject
 	private ReviewDAO reviewDAO;
 	
 	public List<ReviewDTO> list(Criteria cri) {

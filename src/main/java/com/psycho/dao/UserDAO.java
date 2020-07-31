@@ -1,12 +1,17 @@
 package com.psycho.dao;
 
+import javax.inject.Inject;
+
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.psycho.dto.UserDTO;
 import com.psycho.dto.UserVO;
 
+@Repository
 public class UserDAO {
 
+	@Inject
 	private SqlSession sqlSession;
 	
 	// 회원가입

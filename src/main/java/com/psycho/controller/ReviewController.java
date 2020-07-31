@@ -1,27 +1,31 @@
 package com.psycho.controller;
 
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.psycho.dto.Criteria;
 import com.psycho.dto.ReviewDTO;
 import com.psycho.service.ReviewService;
+import com.psycho.utils.Criteria;
 
 @Controller
 public class ReviewController {
 
+	@Inject
 	private ReviewService reviewService;
 	
-	@RequestMapping("/review")
-	public String review(Model model, Criteria cri) {
-		//model.addAttribute("list", reviewService.list(cri));
-		return "/board/list";
-	}
-	
-	@RequestMapping("/write")
+	@RequestMapping(value = "/write", method = RequestMethod.GET)
 	public String write() {
 		return "/board/write";
+	}
+	
+	@RequestMapping(value = "/write", method = RequestMethod.POST)
+	public String write(Model model, ReviewDTO reviewDTO) {
+		reviewService.write(reviewDTO);
+		return "/board/read";
 	}
 	
 	@RequestMapping("/read")
@@ -37,7 +41,15 @@ public class ReviewController {
 	}
 	
 	@RequestMapping("/delete")
-	public String delete() {
-		return "/board/delete";
+	public String delete(ReviewDTO reviewDTO) {
+		reviewService.delete(reviewDTO.getPt_rnum());
+		return "/board/list";
+	}
+	
+	@RequestMapping("/review")
+	public String review(Model model, Criteria cri) {
+		model.addAttribute("list", reviewService.list(cri));
+		//model.addAttribute("pageMaker", );
+		return "/board/list";
 	}
 }

@@ -7,8 +7,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.psycho.dto.Criteria;
 import com.psycho.dto.ReviewDTO;
+import com.psycho.utils.Criteria;
 
 @Repository
 public class ReviewDAO {

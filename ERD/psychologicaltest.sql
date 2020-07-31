@@ -1,13 +1,15 @@
 CREATE TABLE `pt_user` (
-	`pt_num`	int	NOT NULL,
+	`pt_num`	int	not null auto_increment primary key,
 	`pt_id`	varchar(200)	NOT NULL,
 	`pt_pass`	varchar(200)	NOT NULL,
 	`pt_gender`	int	NOT NULL	COMMENT '0 : 남성 1 : 여성',
 	`pt_year`	int	NOT NULL,
 	`pt_mon`	int	NOT NULL,
+	`pt_day`	int not null,
 	`pt_auth`	int	NOT NULL	DEFAULT 0	COMMENT '회원 : 0, 관리자 : 3'
 );
-
+select * from pt_user;
+delete from pt_user ;
 CREATE TABLE `pt_test` (
 	`pt_testnum`	int	NOT NULL,
 	`pt_score`	int	NOT NULL,
